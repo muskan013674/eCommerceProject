@@ -7,12 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @ComponentScan("com.example.eComm.*")
-public class ECommerceProjectApplication implements CommandLineRunner {
-
-    @Override
-    public void run(String... args) {
-
-    }
+public class ECommerceProjectApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(ECommerceProjectApplication.class, args);
