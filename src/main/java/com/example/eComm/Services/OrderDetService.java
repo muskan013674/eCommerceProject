@@ -1,12 +1,12 @@
-package com.example.eComm.OrderDet.Service;
+package com.example.eComm.Services;
 
-import com.example.eComm.CategoryAndProduct.Bean.Product;
-import com.example.eComm.CategoryAndProduct.Repository.ProductRepository;
-import com.example.eComm.Customer.Bean.Customer;
-import com.example.eComm.Customer.Repository.CustomerRepository;
+import com.example.eComm.Beans.Product;
+import com.example.eComm.Repositories.ProductRepository;
+import com.example.eComm.Beans.Customer;
+import com.example.eComm.Repositories.CustomerRepository;
 import com.example.eComm.Exceptions.ObjectNotFoundException;
-import com.example.eComm.OrderDet.Bean.OrderDet;
-import com.example.eComm.OrderDet.Repository.OrderDetRepository;
+import com.example.eComm.Beans.OrderDet;
+import com.example.eComm.Repositories.OrderDetRepository;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;

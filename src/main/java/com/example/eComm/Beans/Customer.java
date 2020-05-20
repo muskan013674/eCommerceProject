@@ -1,7 +1,5 @@
-package com.example.eComm.Customer.Bean;
+package com.example.eComm.Beans;
 
-
-import com.example.eComm.OrderDet.Bean.OrderDet;
 
 import javax.persistence.*;
 import java.util.Set;

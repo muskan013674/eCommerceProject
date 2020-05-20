@@ -1,6 +1,6 @@
-package com.example.eComm.Customer.Repository;
+package com.example.eComm.Repositories;
 
-import com.example.eComm.Customer.Bean.Customer;
+import com.example.eComm.Beans.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;

@@ -1,10 +1,10 @@
-package com.example.eComm.CategoryAndProduct.Service;
+package com.example.eComm.Services;
 
-import com.example.eComm.CategoryAndProduct.Bean.Category;
-import com.example.eComm.CategoryAndProduct.Bean.Product;
-import com.example.eComm.CategoryAndProduct.Repository.CategoryRepository;
+import com.example.eComm.Beans.Category;
+import com.example.eComm.Beans.Product;
+import com.example.eComm.Repositories.CategoryRepository;
 import com.example.eComm.Exceptions.ObjectNotFoundException;
-import com.example.eComm.CategoryAndProduct.Repository.ProductRepository;
+import com.example.eComm.Repositories.ProductRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
@@ -12,37 +12,11 @@ import java.util.*;
 @Service
 public class ProductService {
 
-    private final CategoryRepository categoryRepository;
     private final ProductRepository productRepository;
 
-    public ProductService(CategoryRepository categoryRepository,
-                          ProductRepository productRepository)
+    public ProductService( ProductRepository productRepository)
     {
-        this.categoryRepository = categoryRepository;
         this.productRepository = productRepository;
-    }
-
-    public String create(int Cid, String Cname, String name, double rate) {
-        List<Category> categories = new ArrayList<>();
-        Category cat1 = categoryRepository.findById(Cid);
-        Optional<Category> cat = Optional.ofNullable(cat1);
-        if(cat.isPresent())
-        {
-            Product product = new Product(name, rate);
-            product.setCategory(cat1);
-            categories.add(cat1);
-            categoryRepository.saveAll(categories);
-            return "Product: " + name + " added to Category: " + Cname;
-        }
-        else {
-            Category category = new Category(Cname);
-            Product product = new Product(name, rate);
-            product.setCategory(category);
-            categories.add(category);
-           List<Category>  list=  categoryRepository.saveAll(categories);
-
-            return "Product: " + name + " added to Category: " + Cname;
-        }
     }
 
     public List<String> readAll() {
@@ -75,16 +49,6 @@ public class ProductService {
                 "Category Name : " + prod.getCategory().getCname()+ " " +
                 "Product Rate : " + prod.getRate();
     }
-    public String  searchByCategoryId(int id) {
-
-        Category cat =  productRepository.searchByCategoryId(id);
-        if(Objects.isNull(cat))
-        {
-            throw new ObjectNotFoundException("id-"+id + " Not Found");
-        }
-        return  "Category Id : " + cat.getCid() + " " +
-                "Category Name : " + cat.getCname();
-    }
 
     public int deleteByProductId(int id) {
         int t = productRepository.deleteByProductId(id);
@@ -95,23 +59,7 @@ public class ProductService {
         return t;
     }
 
-    public int deleteByCategoryId(int id) {
-        int t =  productRepository.deleteByCategoryId(id);
-        if(t == 0)
-        {
-            throw new ObjectNotFoundException("id-"+id + " Not Found");
-        }
-        return t;
-    }
 
-    public List<String> searchByCategoryName(String s) {
-        List<String> list = productRepository.searchByCategoryName(s);
-        if(list.isEmpty())
-        {
-            throw new ObjectNotFoundException("Category Name-"+s+ " Not Found");
-        }
-        return list;
-    }
     public List<String> searchByProductName(String s) {
 
         List<String> list = productRepository.searchByProductName(s);

@@ -11,7 +11,6 @@ import java.io.Serializable;
 import java.util.Date;
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
-@Slf4j
 public class OrderCreateProjection  {
 
     private int pid;

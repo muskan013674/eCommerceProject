@@ -1,6 +1,6 @@
-package com.example.eComm.OrderDet.Repository;
+package com.example.eComm.Repositories;
 
-import com.example.eComm.OrderDet.Bean.OrderDet;
+import com.example.eComm.Beans.OrderDet;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;

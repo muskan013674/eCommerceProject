@@ -1,6 +1,6 @@
-package com.example.eComm.CategoryAndProduct.Bean;
+package com.example.eComm.Beans;
 
-import com.example.eComm.CategoryAndProduct.Bean.Product;
+import com.example.eComm.Beans.Product;
 
 import javax.persistence.*;
 import java.util.HashSet;

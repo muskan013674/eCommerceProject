@@ -1,7 +1,7 @@
-package com.example.eComm.OrderDet.Bean;
+package com.example.eComm.Beans;
 
-import com.example.eComm.Customer.Bean.Customer;
-import com.example.eComm.CategoryAndProduct.Bean.Product;
+import com.example.eComm.Beans.Customer;
+import com.example.eComm.Beans.Product;
 
 import javax.persistence.*;
 import java.time.LocalDate;
